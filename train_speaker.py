@@ -26,7 +26,7 @@ matd3_agent = MATD3(agent_names, actor_dims, action_dims)
 buffer = ReplayBuffer(10000, actor_dims, action_dims, batch_size=1000, agent_names=agent_names)
 
 
-N_GAMES = 500000
+N_GAMES = 100000
 MAX_STEP_PER_EPISODE = 75
 global_step = 0
 
