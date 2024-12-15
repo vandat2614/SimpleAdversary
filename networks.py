@@ -23,7 +23,7 @@ class CriticNetwork(nn.Module):
         # print(f'    init {name}')
 
     def forward(self, state, action): # (b, 28), (b, 15)
-        x = F.relu(self.fc1(T.cat([state, action].to(self.device), dim=1))) # (b, 28+15)
+        x = F.relu(self.fc1(T.cat([state, action], dim=1).to(self.device))) # (b, 28+15)
         x = F.relu(self.fc2(x))
         q = self.q(x) # (b, 1)
 
